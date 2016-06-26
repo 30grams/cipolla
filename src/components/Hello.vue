@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ counter }}</h1>
+    <h1 :class="{ 'on-break': onbreak}">{{ counter }}</h1>
   </div>
 </template>
 
@@ -9,6 +9,7 @@
   export default {
     vuex: {
       getters: {
+        onbreak: state => state.onbreak,
         counter(state) {
           var sec = state.counter;
           var minutes = Math.floor(sec / 60);
@@ -26,5 +27,8 @@
 <style scoped>
   h1 {
     color: #42b983;
+  }
+  h1.on-break {
+    color: #2c3e50;
   }
 </style>
