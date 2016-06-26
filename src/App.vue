@@ -2,6 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
+    <toolbar></toolbar>
     <p>
       Welcome to your Vue.js app!
     </p>
@@ -20,14 +21,17 @@
       <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
     </p>
   </div>
+
 </template>
 
 <script>
 import Hello from './components/Hello'
+import Toolbar from './components/Toolbar'
 
 export default {
   components: {
-    Hello
+    Hello,
+    Toolbar
   }
 }
 </script>
