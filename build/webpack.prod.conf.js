@@ -17,9 +17,9 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    publicPath: './',
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+    publicPath: './', // Added in to make paths relatives for wieving in ghpages
+    filename: utils.assetsPath('js/[name].js'), // removed .[chuckhash]
+    chunkFilename: utils.assetsPath('js/[id].js') // removed .[chunkhash]
   },
   vue: {
     loaders: utils.cssLoaders({
