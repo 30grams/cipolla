@@ -1,10 +1,10 @@
 <template>
   <!-- duration-->
-  <div @input="setDuration">
+  <div @input="setDuration" class="selector">
     <mdl-textfield floating-label="Duration" :value="duration"></mdl-textfield>
     <mdl-slider :value="duration" min="5" max="60" :step="5"></mdl-slider>
   </div>
-  <div @input="setBreak; reset">
+  <div @input="setBreak" class="selector">
     <!-- break-->
     <mdl-textfield floating-label="Break" :value="break"></mdl-textfield>
     <mdl-slider :value="break" min="0" max="15" :step="1"></mdl-slider>
@@ -17,7 +17,7 @@
 
 <script>
   import Selector from './Selector'
-  import { toggleTimer, reset, setBreak, setDuration } from '../vuex/actions'
+  import { toggleTimer, setBreak, setDuration } from '../vuex/actions'
 
   export default {
     components: [ Selector ],
@@ -29,7 +29,6 @@
       },
       actions: {
         activate: toggleTimer,
-        reset,
         setBreak,
         setDuration
       }
@@ -45,5 +44,23 @@
   #toolbar a {
     color: #42b983;
     text-decoration: none;
+  }
+
+  .selector {
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: flex-start;
+    flex-direction: row;
+  }
+
+  .mdl-textfield {
+    display: flex;
+    max-width: 5rem;
+  }
+
+  .mdl-slider__container {
+    display: flex;
+    max-width: 5rem;
   }
 </style>

@@ -13,6 +13,7 @@ export const toggleTimer = function({ dispatch, state }) {
         // timer function
         dispatch('DECREMENT');
         if (state.counter <= 0) {
+          dispatch('STOP');
           // reset and restart a new countdown
           if (state.onbreak) {
             dispatch('RESET');
@@ -32,9 +33,13 @@ export const reset = function({dispatch}) {
 }
 
 export const setDuration = function({dispatch}, e) {
+  dispatch('STOP');
+  dispatch('RESET')
   dispatch('SETDURATION', e.target.value)
 }
 
 export const setBreak = function({dispatch}, e) {
+  dispatch('STOP');
+  dispatch('RESET')
   dispatch('SETBREAK', e.target.value)
 }

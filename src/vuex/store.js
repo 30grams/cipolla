@@ -26,13 +26,11 @@ const mutations = {
     clearInterval(state.timer);
   },
   BREAK (state) {
-    clearInterval(state.timer);
-    state.duration = state.break;
+    state.duration = state.break * 60;
     state.onbreak = true;
   },
   RESET (state) {
-    clearInterval(state.timer);
-    state.counter = state.duration;
+    state.counter = state.duration * 60;
     state.onbreak = false;
   },
   SETDURATION (state, value) {
