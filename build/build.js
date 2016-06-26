@@ -9,7 +9,7 @@ var webpack = require('webpack')
 var webpackConfig = require('./webpack.prod.conf')
 
 console.log(
-  '  Tip:\n' +
+  '  Tip:\n' + path +
   '  Built files are meant to be served over an HTTP server.\n' +
   '  Opening index.html over file:// won\'t work.\n'
 )
